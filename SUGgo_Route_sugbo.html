@@ -1,0 +1,81 @@
+# SugboBus Cebu - Account Creation & Route Engine
+import time
+
+print("\nHi! This is SUGgo, your commute assistance\n")
+time.sleep(2)
+print("WELCOME TO THE SUGBO\n")
+time.sleep(2)
+
+print("\n")
+
+print("=" * 15 + " LOADING " + "=" * 15)
+print("\n")
+time.sleep(4)
+print("\n")
+print("_" * 15 + " Main Menu " + "_" * 15)
+
+print("\n1. Login\n2. Create new account")
+account = int(input("Enter the number of the selected option: "))
+
+def Create_account():
+    print("\n------ Create Account ------")
+    username = input("Username: ").strip()
+    birthdate = input("Birthdate: ").strip()
+    while True:
+        email_address = input("Email address: ").strip().lower()
+        if "@" in email_address and ".com" in email_address:
+            break
+        else:
+             print("Invalid Email Address (Must contain '@' and '.com')")
+    password = str(input("Password: ")).strip()
+    print(f"\n[+] Account successfully created for {username} ({email_address})! You can now login.\n")
+
+
+def login():
+    print("\n------Login------")
+
+    username = input("Username: ").strip()
+    password = input("Password: ").strip()
+
+    print(f"\n[+] Login successfully! Welcome Back {username}!\n")
+
+if account == 1:
+    login()
+elif account ==2:
+    Create_account()
+else:
+    print("Invalid Option")
+
+print("\n------Select_Option------")
+print("1. Commuter Handbook\n2. Route Directory\n3. Trip Planner \n")
+option = int(input("Enter the number of the option: "))
+
+def Commuter_Handbook():
+    while True:
+        print("\n------Commuter_Handbook------")
+        print("1. Cebuano Lingo\n2. Bus Terminals\n")
+        handbook = int(input("Enter the number of the option: "))
+        if handbook == 1:
+            print("'Lugar lang!'Cebuano PhraseMeaning: 'Pull over, please!' or 'I'm getting off here.\nTip: Shout or say this clearly to the driver when approaching your desired bus stop or jeepney drop-off point.\n")
+            print("'Palihug ko sa plete!'Cebuano Phrase\nMeaning: Please pass my fare forward to the driver / conductor.\nTip: In traditional or modern jeepneys without tap-card machines, hand your fare to the passenger beside you with this polite phrase.\n")
+            print("'Pila plete padung [Lugar]?'Cebuano Phrase\nMeaning: How much is the fare going to [Destination]?\nTip: Always verify the fare before boarding if traveling to a new or outer zone.\n")
+            print("'Estudyante / Senior / PWD ko' Cebuano Phrase\nMeaning: I am a student / senior citizen / PWD (entitled to 20% discount).\nTip: By Philippine LTFRB law, presenting a valid student or senior/PWD ID entitles you to a 20% fare discount on all public transport.\n")
+            print("'Muagi ni sa [Landmark]?' Cebuano Phrase\nMeaning: 'Does this vehicle pass by [Landmark]?'\nTip: For instance: 'Muagi ni sa SWU?' (Does this pass SWU?)\n")
+            break
+        else:
+            print("\n------Bus_Terminals------")
+            print("Cebu South Bus Terminal (CSBT)\nLocation: N. Bacalso Ave, beside E-Mall.\nHub for all Southern Cebu provincial buses: Sugbo 866 (Moalboal, Badian), Sugbo 895 (Oslob), Siquijor RoRo, and CBRT Package 1.\n")
+            print("Cebu North Bus Terminal (CNBT)\nLocation: Outdoor Bay at SM City Cebu North Wing.\n")
+            print("Ayala Center Cebu Terminal\nLocation: Cebu Business Park, Archbishop Reyes Ave.\nPremier modern PUV transfer terminal: Bay 1 serves 13C & 62B (Talamban/Pit-os); Bay 2 serves 03Q & 04L; Bay 3 serves Mandaue 20A.\n")
+            print("Cebu IT Park Public Terminal\nLocation: Salinas Drive, Lahug (near The Walk).\n24-hour terminal serving BPO workers: 17B & 17C (Colon/Carbon), 13C, and Sugbo Urban 1 (direct to Mactan Newtown).\n")
+            print("Parkmall Public Transit Hub\nLocation: Ouano Ave, Mandaue Reclamation Area.\nCrossroads for 01K (Urgello/SWU direct), MyBus 02 & 04, and Lapu-Lapu PUVs heading into Mactan.\n")
+            print("Mactan Airport Bus Bay (MCIA)\nLocation: Outside Terminal 1 & Terminal 2 Arrivals.\nMyBus 02 (to SM City Cebu for ₱50), MyBus 03 (to SM Seaside), and Sugbo Urban buses.")
+
+
+if option == 1:
+    Commuter_Handbook()
+elif option == 2:
+    print("\n------Route Directory------")
+
+else:
+    print("\n------Trip_Planner------")
